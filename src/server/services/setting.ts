@@ -1,7 +1,7 @@
 import { InferApiRequest } from '@roxavn/core/base';
 import { BaseService, inject } from '@roxavn/core/server';
 import {
-  UpdateSettingService,
+  UpsertSettingService,
   serverModule as utilsServerModule,
 } from '@roxavn/module-utils/server';
 
@@ -11,8 +11,8 @@ import { serverModule } from '../module.js';
 @serverModule.useApi(settingApi.updateEmailSenderSetting)
 export class UpdateEmailSenderSettingApiService extends BaseService {
   constructor(
-    @inject(UpdateSettingService)
-    private updateSettingService: UpdateSettingService
+    @inject(UpsertSettingService)
+    private updateSettingService: UpsertSettingService
   ) {
     super();
   }
